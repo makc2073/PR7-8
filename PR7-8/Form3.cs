@@ -45,5 +45,30 @@ namespace PR7_8
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sqlExpression = "DELETE  FROM Contract$ WHERE Account = '"+ textBox1.Text +"'";
+            string up = "SELECT * FROM Contract$";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                int number = command.ExecuteNonQuery();
+                MessageBox.Show("Строка удалена");
+                SqlDataAdapter adapter = new SqlDataAdapter(up, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                dataGridView1.DataSource = ds.Tables[0];
+                connection.Close();
+                
+            }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

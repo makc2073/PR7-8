@@ -371,7 +371,7 @@ namespace PR7_8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(797, 450);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label11);
